@@ -1,0 +1,25 @@
+{% extends "home_base.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        {% for x in all_new %}
+        <div class="col-lg-3 col-sm-6 grid-margin mb-5 mb-sm-2">
+          <div class="position-relative image-hover">
+            <img src="{{x.main_image_url}}" class="img-fluid" alt="world-news" />
+            <span class="thumb-title">{{x.category}}</span>
+          </div>
+          <h5 class="font-weight-bold mt-3">
+            {{x.short_desc}}
+          </h5>
+          <p class="fs-15 font-weight-normal">
+            {{x.short_desc}}
+          </p>
+          <a href="/article_detail/{{x.id}}" class="font-weight-bold text-dark pt-2">Read Article</a>
+        </div>
+        {% endfor %}
+        
+      </div>
+
+</div>
+{% endblock body %}

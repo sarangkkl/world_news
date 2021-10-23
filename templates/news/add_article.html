@@ -1,0 +1,19 @@
+{% extends 'author_base.html' %}
+
+{% block body %}
+
+<div class="container">
+    <div class="form-group  my-2">
+        <form action="{% url 'save_article' %}" method="POST">
+            {% csrf_token %}
+
+            
+                    {{form.media}}
+                    {{form.as_p}}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+</div>
+
+{% endblock body %}
